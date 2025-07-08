@@ -1,6 +1,6 @@
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
+    height: auto;
     margin-bottom: 6rem;
   }
   .about-containers {
@@ -47,13 +47,13 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+ @media screen and (max-width: 600px) {
   #contact,
   footer {
-    height: 40vh;
+    height: fit-content;
   }
   #profile {
-    height: 83vh;
+    height: auto;
     margin-bottom: 0;
   }
   article {
@@ -83,7 +83,7 @@
   }
   .nav-links {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     text-align: center;
   }
   .section__pic-container {
@@ -91,18 +91,12 @@
     height: 46vw;
     justify-content: center;
   }
-  .section__text__p1 {
-  font-size: 2.5rem;       /* Try 3rem or more if needed */
-  font-weight: 700;
-  text-align: center;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
+
   .title {
     font-size: 2rem;
   }
   .text-container {
-    text-align: justify;
+    text-align: left;
   }
   .animated-title span {
   display: inline-block;
@@ -152,8 +146,9 @@
     border-color: transparent;
   }
 }
-@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
   .education-boxes {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -187,5 +182,26 @@
     justify-content: space-evenly;
     font-size: 1.1rem;
   }
+}
+
+@media screen and (max-width: 1200px) {
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image,
+  .education-boxes {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #education {
+    margin-bottom: 5rem;
+  }
+}
+.edu-card p,
+.details-container p {
+  overflow-wrap: break-word;
 }
 

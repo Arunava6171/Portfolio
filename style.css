@@ -202,15 +202,22 @@ section {
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /* ICONS */
 
 .icon {
-  cursor: pointer;
-  height: 2rem;
+  cursor: pointer; /* Makes it clear these are clickable */
+  width: 2.5rem; /* Example size, adjust as needed */
+  height: 2.5rem; /* Maintain aspect ratio */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+  /* Add other icon-specific styles if any */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Example hover effect */
 }
 
 /* BUTTONS */
@@ -718,18 +725,25 @@ body.dark-mode .section-title {
   gap: 1.5rem;
   justify-content: space-between;
   align-items: flex-start;
+}            
+
+#education {
+  margin-bottom: 6rem; /* space between education and experience */
 }
-/* Light mode: transparent effect for edu-card */
-.edu-card {             
-  background-color: #ffffff; /* Add this line to make it white in light mode */
+
+/* Light mode: solid white card with rounded corners */
+.edu-card {
+  background-color: #ffffff;
   color: #333;
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: none; /* Re-add a subtle shadow for white cards */
-  backdrop-filter: none; /* Remove blur for solid white cards */
+  border-radius: 12px; /* Rounded corners on all sides */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft depth shadow */
+  border: 1px solid #e0e0e0; /* Optional light border for extra separation */
+  backdrop-filter: none;
   width: 200px;
   text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+              box-shadow 0.3s ease, color 0.3s ease;
 }
 
 /* Dark mode: transparent glass effect (already good, just ensure consistency) */
@@ -948,4 +962,75 @@ body.dark-mode .edu-card {
 
 body.dark-mode #education {
   background-color: #121212; /* Dark background for dark mode */
+}
+
+/* --- Styles for the Social Icons Section --- */
+
+#socials-container {
+    display: flex; /* Makes the icons arrange in a row */
+    justify-content: center; /* Horizontally centers the icons within their container */
+    align-items: center;   /* Vertically centers the icons (addresses "stuck to the above" issue) */
+    gap: 1.5rem;           /* Adds space BETWEEN the icons. Adjust this value as needed for more/less space */
+    margin-top: 1.5rem;    /* Adds space ABOVE the social icons container (adjust as needed) */
+    padding: 0.5rem 0;     /* Add some vertical padding if needed to create space around the row of icons */
+}
+
+.icon {
+    /* Ensures all icons (LinkedIn, GitHub, Email) are the same size */
+    width: 2.5rem;  /* Adjust this size to your preference */
+    height: 2.5rem; /* Ensures height matches width, assuming square icons */
+    object-fit: contain; /* Ensures the entire image is visible within the assigned width/height */
+    cursor: pointer;      /* Indicates they are clickable */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* --- Mobile Responsiveness --- */
+/* Add these adjustments within your existing @media queries in mediaqueries.css */
+
+@media screen and (max-width: 1200px) {
+    #socials-container {
+       gap: 1.25rem; 
+        /* No major changes needed here, flex should handle it */
+        /* You might want a slightly smaller gap than desktop, e.g., 1.25rem */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #socials-container {
+        gap: 1rem; /* Adjust space for smaller screens if 1.5rem is too much */
+        /* If you anticipate more icons later and they might not fit on one line: */
+        /* flex-wrap: wrap; */
+    }
+
+    .icon {
+        width: 2rem;  /* Smaller icons for very small screens */
+        height: 2rem;
+    }
+}
+.about-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Stack vertically on smaller screens to prevent overlap */
+@media screen and (max-width: 900px) {
+  .about-layout {
+    flex-direction: column;
+    align-items: center; /* Optional: center cards below the image */
+  }
+
+  .about-image, .education-boxes {
+    width: 100%;
+    text-align: center;
+  }
+
+  .edu-card {
+    margin: 0 auto; /* Optional: center the cards themselves */
+  }
 }
