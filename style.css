@@ -689,7 +689,11 @@ body.dark-mode .edu-card {
   color: #f0f0f0;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
 }
-
+body.light-mode .edu-card {
+  background-color: #ffffffe5;
+  color: #100f0f;
+  box-shadow: 0 0 12px rgba(244, 243, 243, 0.05);
+}
 body.dark-mode .section-title {
   color: #ffffff;
 }
@@ -957,7 +961,7 @@ body.dark-mode .edu-card {
 
 /* Ensure the #education section has a background for the blur effect to be visible */
 #education {
-  background-color: #f0f0f0; /* Light background for light mode */
+  background-color: #fffffff1; /* Light background for light mode */
 }
 
 body.dark-mode #education {
@@ -1032,5 +1036,50 @@ body.dark-mode #education {
 
   .edu-card {
     margin: 0 auto; /* Optional: center the cards themselves */
+  }
+}
+.edu-card,
+.small-card, /* or .profile-card / .profile-image if you’re using one */
+.card {
+  background-color: #ffffff;     /* Solid white */
+  box-shadow: none;              /* Remove shadows */
+  border: none;                  /* Optional: remove subtle default borders */
+}
+/* Light mode (default): remove shadow */
+.edu-card {
+  background-color: #fdf8f8;
+  box-shadow: none;
+  border: none; /* optional */
+}
+.edu-card {
+  border-radius: 12px; /* or try 16px for more curve */
+}
+/* Light mode styles (default) */
+.edu-card {
+  border: 2px solid #000000; /* Bold black border */
+  border-radius: 12px;        /* Smooth rounded corners */
+  background-color: transparent; /* Keep background clean, or use #fff if needed */
+}
+
+/* Dark mode override */
+@media (prefers-color-scheme: dark) {
+  .edu-card {
+    border: 2px solid #ffffff;       /* White border for contrast */
+    background-color: transparent;   /* Optional: or use a soft dark tone */
+    color: #ffffff;                  /* Ensure text stays readable */
+  }
+}
+.edu-card {
+  box-shadow: none;      /* Removes all drop shadows */
+}
+/* Default: show original icons in light mode */
+.edu-icon {
+  filter: none;
+}
+
+/* Dark mode: invert icons to appear white */
+@media (prefers-color-scheme: dark) {
+  .edu-icon {
+    filter: brightness(0) invert(1);
   }
 }
