@@ -1118,4 +1118,13 @@ body.dark-mode #education {
 body.dark-mode .edu-card {
   border: 2px solid #ffffff;  /* Solid white border */
 }
+.edu-card h3,
+.edu-card p {
+  color: #000000; /* Solid black text for light mode */
+}
+.edu-card {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 

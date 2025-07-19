@@ -204,4 +204,15 @@
 .details-container p {
   overflow-wrap: break-word;
 }
+@media screen and (max-width: 600px) {
+  #socials-container {
+    gap: 1.25rem;
+    flex-wrap: wrap; /* Just in case more icons are added later */
+  }
+
+  .icon {
+    width: 3rem;   /* Increase from 2rem or 2.5rem */
+    height: 3rem;
+  }
+}
 
