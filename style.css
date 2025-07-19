@@ -1083,3 +1083,39 @@ body.dark-mode #education {
     filter: brightness(0) invert(1);
   }
 }
+/* Example: Light and Dark classes */
+.light-mode .icon {
+  filter: none;
+  background-color: transparent;
+}
+
+.dark-mode .icon {
+  filter: invert(1); /* Optional depending on icon color */
+}
+.light-mode .icon {
+  color: black;
+}
+
+.dark-mode .icon {
+  color: white;
+}
+/* Default: black icons in light mode */
+.edu-icon {
+  filter: none;                /* Removes any unwanted effects */
+  transition: filter 0.3s ease;
+  width: 40px;                 /* Ensure sizing is consistent */
+  height: auto;
+}
+/* Light mode: Opaque black border */
+.edu-card {
+  border: 2px solid #1e0b0bd1;  /* Solid black border */
+  border-radius: 12px;        /* Optional: nice rounded corners */
+  background-color: transparent;
+  transition: border 0.3s ease; /* Smooth transition */
+}
+
+/* Dark mode override: clean white border */
+body.dark-mode .edu-card {
+  border: 2px solid #ffffff;  /* Solid white border */
+}
+
